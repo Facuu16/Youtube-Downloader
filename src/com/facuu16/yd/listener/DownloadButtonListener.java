@@ -22,7 +22,7 @@ public class DownloadButtonListener implements ActionListener {
     public void actionPerformed(ActionEvent event) {
         String urlText = ui.getUrl().getText().trim();
         if (urlText.isEmpty() || !urlText.startsWith("https://youtu.be/")) {
-            JOptionPane.showMessageDialog(ui.getFrame(), "Please enter a valid URL");
+            JOptionPane.showMessageDialog(ui.getFrame(), "Please enter a valid URL (https://youtu.be/XXXXXXXXXXX)");
             return;
         }
 
@@ -43,7 +43,7 @@ public class DownloadButtonListener implements ActionListener {
         request.setOption("output", "%(title)s.mp4");
         request.setOption("retries", 10);
 
-        JOptionPane.showMessageDialog(ui.getFrame(), "Downloading...");
+        JOptionPane.showMessageDialog(ui.getFrame(), "Press OK to start the download");
 
         try {
             YoutubeDL.execute(request);
