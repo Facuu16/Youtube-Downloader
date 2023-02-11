@@ -26,8 +26,8 @@ public class UserInterface {
         frame.setLayout(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        Font font = new Font("Consolas", Font.PLAIN, 14);
-        Border border = BorderFactory.createLineBorder(Color.DARK_GRAY, 1);
+        final Font font = new Font("Consolas", Font.PLAIN, 14);
+        final Border border = BorderFactory.createLineBorder(Color.DARK_GRAY, 1);
 
         download = new JButton("DOWNLOAD");
         download.setBounds(200, 150, 180, 30);
@@ -45,8 +45,8 @@ public class UserInterface {
     }
 
     public String getDataFolder() {
-        String jarPath = UserInterface.class.getProtectionDomain().getCodeSource().getLocation().getPath();
-        String parentPath = new File(jarPath).getParent();
+        final String jarPath = UserInterface.class.getProtectionDomain().getCodeSource().getLocation().getPath();
+        final String parentPath = new File(jarPath).getParent();
         return new File(parentPath).getAbsolutePath();
     }
 
