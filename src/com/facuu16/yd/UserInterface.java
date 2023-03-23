@@ -6,8 +6,6 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 
-import java.io.File;
-
 public class UserInterface {
     private JButton download;
     private JFrame frame;
@@ -42,12 +40,6 @@ public class UserInterface {
         frame.add(download);
         frame.add(url);
         frame.setVisible(true);
-    }
-
-    public String getDataFolder() {
-        final String jarPath = UserInterface.class.getProtectionDomain().getCodeSource().getLocation().getPath();
-        final String parentPath = new File(jarPath).getParent();
-        return new File(parentPath).getAbsolutePath();
     }
 
     public JFrame getFrame() {

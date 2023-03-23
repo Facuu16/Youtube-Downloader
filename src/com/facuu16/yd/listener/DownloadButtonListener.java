@@ -1,6 +1,7 @@
 package com.facuu16.yd.listener;
 
 import com.facuu16.yd.UserInterface;
+import com.facuu16.yd.YoutubeDownloader;
 import com.sapher.youtubedl.YoutubeDL;
 import com.sapher.youtubedl.YoutubeDLException;
 import com.sapher.youtubedl.YoutubeDLRequest;
@@ -26,8 +27,7 @@ public class DownloadButtonListener implements ActionListener {
             return;
         }
 
-        final String directory = ui.getDataFolder();
-
+        final String directory = YoutubeDownloader.getDataFolder();
         final File youtubeDl = new File(directory + "\\youtube-dl.exe");
 
         if (!youtubeDl.exists()) {
